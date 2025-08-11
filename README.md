@@ -1,107 +1,71 @@
-# 🍋 Little Lemon Mobile App
+# 🍋 Little Lemon App
 
-A mobile app for a Mediterranean restaurant built with React Native + Expo for the frontend, with a backend server (Node.js + MySQL) running locally in Docker containers. The app uses SQLite locally for offline menu access.
-
----
+A mobile app for a Mediterranean restaurant with a **React Native + Expo frontend** and a **Node.js + MySQL backend** running locally in Docker containers. The app supports offline menu browsing via SQLite.
 
 ## 🚀 Project Overview
 
-Little Lemon is designed to offer users a seamless way to browse the restaurant menu, filter dishes by category, and personalize their experience with onboarding and profile management.
+Little Lemon lets users browse and filter the restaurant menu, manage profiles, and enjoy a seamless experience.
 
----
+## 📂 Repositories
 
-## 📱 Frontend
+* **Frontend:** [little-lemon-frontend](https://github.com/yourusername/little-lemon-frontend)
+  React Native app using Expo, SQLite for local caching, and UI features.
 
-* Built with React Native + Expo
-* Uses SQLite for offline data storage and caching menu data
-* Features include:
+* **Backend:** [little-lemon-backend](https://github.com/yourusername/little-lemon-backend)
+  Node.js REST API with MySQL database, Dockerized for local development and testing.
 
-  * Onboarding screen for new users
-  * Menu browsing and filtering
-  * Search functionality with loading indicators
-  * Profile management
+
+## 📱 Frontend Features
+
+* Onboarding screen (name + email)
+* Full menu browsing and category filtering
+* Search with loading indicators
+* Profile management
+* Offline menu access with SQLite
 * Published on Google Play Store (frontend only)
-* Connects to backend API hosted on your local machine
+* Connects to backend API (hosted locally for now)
 
----
+## 🖥️ Backend Features
 
-## 🖥️ Backend
+* REST API server for menu and user data
+* MySQL database running inside Docker
+* Runs locally with exposed ports for app connectivity
+* Authentication planned for later implementation
 
-* Node.js REST API server serving menu data and handling user data
-* MySQL database running inside a Docker container
-* Backend server runs locally on your computer inside Docker containers
-* Backend API exposed via port forwarding or ngrok to enable app connectivity
-* Authentication planned for production phase (Firebase or custom auth)
 
----
+## 🐳 Docker Setup (Backend)
 
-## 🐳 Docker Setup
-
-* Docker Compose manages the backend containers (Node.js API + MySQL)
-* Simplifies environment setup and deployment on any machine with Docker installed
-* Ports are exposed to allow frontend app to communicate with backend server
-
----
+* Uses Docker Compose to manage Node.js and MySQL containers
+* Easy setup and teardown on any machine with Docker installed
+* Ports exposed for frontend-backend communication
 
 ## ⚙️ Development Setup
 
-### Prerequisites
+### Backend
 
-* Node.js and npm installed
-* Docker and Docker Compose installed
-* Expo CLI installed globally (`npm install -g expo-cli`)
+1. Clone: `git clone https://github.com/yourusername/little-lemon-backend.git`
+2. Run: `docker-compose up`
+3. Use port forwarding or ngrok for external access if needed.
 
-### Running Backend Locally
+### Frontend
 
-1. Clone the backend repository
-2. Run `docker-compose up` to start the backend server and MySQL container
-3. Configure your router for port forwarding or run `ngrok` to expose the backend API publicly
-4. Update the frontend API base URL to point to your public IP or ngrok URL
+1. Clone: `git clone https://github.com/yourusername/little-lemon-frontend.git`
+2. Install: `npm install`
+3. Start: `expo start`
+4. Configure API base URL to point to backend server IP or tunnel URL.
 
-### Running Frontend Locally
+## 📅 Roadmap
 
-1. Clone the frontend repository
-2. Run `npm install` to install dependencies
-3. Run `expo start` to launch the app in Expo Go or simulator
-4. The app connects to the backend API at the configured URL
+| Phase            | Description                                     |
+| ---------------- | ----------------------------------------------- |
+| MVP              | Frontend with onboarding, menu, search, offline |
+| Backend Setup    | Local Dockerized API + MySQL database           |
+| Authentication   | Add Firebase/custom auth                        |
+| Publishing       | Publish frontend app to Google Play             |
+| Cloud Deployment | Deploy backend to cloud service                 |
 
----
 
-## 🗂️ Repository Structure
+## 📞 Contact
 
-```
-/frontend
-  ├── App.js
-  ├── /screens
-  ├── /assets
-  └── package.json
+For questions or contributions, contact Angel Chaico.
 
-/backend
-  ├── docker-compose.yml
-  ├── Dockerfile
-  ├── /src
-  │    ├── api.js
-  │    ├── routes.js
-  │    └── ...
-  ├── /migrations
-  ├── /models
-  └── package.json
-```
-
----
-
-## 📅 Roadmap & Next Steps
-
-| Phase            | Features/Tasks                                                                    |
-| ---------------- | --------------------------------------------------------------------------------- |
-| MVP (Current)    | Onboarding, menu browsing, filtering, offline cache, search, local SQLite storage |
-| Backend setup    | Node.js + MySQL in Docker, API endpoints, local deployment                        |
-| Authentication   | Implement Firebase auth or custom login system                                    |
-| Publishing       | Release frontend to Google Play Store                                             |
-| Cloud deployment | Future plan to deploy backend to cloud service                                    |
-
----
-
-## 📞 Support & Contributions
-
-Feel free to open issues or pull requests for improvements. For questions, contact Angel Chaico.
